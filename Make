@@ -1,9 +1,4 @@
--R ./build Test
-
-# Library name
--R ./elements GeoCoq
-
-Test/import.v
+import.v
 
 # Coq files
 GeoCoq/Axioms/euclidean_axioms.v
