@@ -19,16 +19,14 @@ opam init
 eval `opam config env`
 opam switch create 4.06.0
 
-opam init
 eval `opam config env`
-opam install coq.8.8.1
+opam install menhir coq.8.8.1
 
-git clone https://github.com/Deducteam/Dedukti.git
-cd Dedukti
+git clone https://github.com/Deducteam/Dedukti.git <dedukti-path>
+cd <dedukti-path>
 make install
 
-git clone --recursive https://github.com/Deducteam/GeoCoqInE-Euclid.git
-cd GeoCoqInE-Euclid
+git clone --recursive https://github.com/Deducteam/GeoCoqInE-Euclid.git <coqine-path>
+cd <coqine-path>
 make
-
 ```
