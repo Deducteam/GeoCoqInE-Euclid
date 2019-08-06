@@ -9,7 +9,7 @@ Dedukti Set Destination "_build/out".
 Dedukti Enable Debug.
 Dedukti Set Debug "_build/debug.out".
 
-Dedukti Set Encoding "polymorph".
+Dedukti Set Encoding "template".
 
 Dedukti Filter Out "Coq.Init.Logic.rew_ex".
 Dedukti Filter Out "Coq.Init.Logic.rew_ex2".

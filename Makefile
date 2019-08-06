@@ -49,7 +49,6 @@ $(BUILD_FOLDER)/C.dk: | $(BUILD_FOLDER)
 config.v:
 	make -C coqine/encodings _build/predicates/C.config
 	cp coqine/encodings/_build/predicates/C.config config.v
-	echo "Dedukti Set Encoding \"template\"." >> config.v
 	echo "Dedukti Set Param \"syntax\" \"CondensedDedukti\"." >> config.v
 
 # Generate the dependencies of [.dk] files
