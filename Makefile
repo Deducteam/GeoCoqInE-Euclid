@@ -9,6 +9,8 @@ BUILD_FOLDER = _build
 OUTFOLDER    = $(BUILD_FOLDER)/out
 PRUNEDFOLDER = $(BUILD_FOLDER)/pruned
 
+ENCODING=predicates_eta
+
 COQINEPATH=coqine
 
 DKS = $(wildcard $(PRUNEDFOLDER)/*.dk)
@@ -41,13 +43,14 @@ CoqMakefile: Make
 	$(COQ_MAKEFILE) -f Make -o CoqMakefile
 
 $(BUILD_FOLDER)/C.dk: | $(BUILD_FOLDER)
-	make -C coqine/encodings _build/predicates/C.dk
-	cp coqine/encodings/_build/predicates/C.dk $(BUILD_FOLDER)
+	make -C coqine/encodings _build/$(ENCODING)/C.dk
+	cp coqine/encodings/_build/$(ENCODING)/C.dk $(BUILD_FOLDER)
 
 config.v:
 	make -C coqine/encodings _build/predicates/C.config
 	cp coqine/encodings/_build/predicates/C.config config.v
 	echo "Dedukti Set Encoding \"template\"." >> config.v
+	echo "Dedukti Set Param \"syntax\" \"CondensedDedukti\"." >> config.v
 
 # Generate the dependencies of [.dk] files
 depend: prune $(BUILD_FOLDER)/C.dk | $(PRUNEDFOLDER) $(BUILD_FOLDER)

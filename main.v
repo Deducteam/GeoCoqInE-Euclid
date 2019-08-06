@@ -16,6 +16,8 @@ Dedukti Filter Out "Coq.Init.Logic.rew_ex2".
 
 Dedukti Enable Failproofmode.
 
+Dedukti Enable Verbose.
+
 Load config.
 
 Require Import import.
