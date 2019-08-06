@@ -1,9 +1,12 @@
+
+(* Small sample to check Makefile
 Require Import GeoCoq.Elements.OriginalProofs.euclidean_defs.
 Require Import GeoCoq.Elements.OriginalProofs.general_tactics.
 Require Import GeoCoq.Elements.OriginalProofs.euclidean_tactics.
 Require Import GeoCoq.Elements.OriginalProofs.lemma_congruencesymmetric.
+ *)
 
-(*
+
 Require Import GeoCoq.Axioms.euclidean_axioms.
 Require Import GeoCoq.Elements.OriginalProofs.euclidean_defs.
 Require Import GeoCoq.Elements.OriginalProofs.general_tactics.
@@ -238,4 +241,3 @@ Require Import GeoCoq.Elements.OriginalProofs.lemma_rectangleparallelogram.
 Require Import GeoCoq.Elements.OriginalProofs.lemma_paste5.
 Require Import GeoCoq.Elements.OriginalProofs.proposition_48.
 Require Import GeoCoq.Elements.OriginalProofs.book1.
-*)
