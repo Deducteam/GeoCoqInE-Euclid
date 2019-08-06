@@ -1,0 +1,6 @@
+[submodule "coqine"]
+	path = coqine
+	url = https://github.com/Deducteam/CoqInE.git
+[submodule "elements"]
+	path = elements
+	url = https://github.com/Deducteam/GeoCoqInE.git

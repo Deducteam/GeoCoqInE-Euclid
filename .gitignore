@@ -1,0 +1,42 @@
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.cmt
+*.cmti
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+*.glob
+*.vo
+*.d
+*.depend
+.merlin
+
+*.dko
+
+_build/**/*.dk
+_build/config.v
+
+_build/out
+
+_build/GeoCoq
+_build/Make
+_build/import.v
+_build/config.dk
+_build/pruned
+
+# emacs tmp files
+*~
+*#
+
+CoqMakefile
+
+# Generated .aux files
+*.aux
+
+# Debugging files
+*.out
+*.conf
