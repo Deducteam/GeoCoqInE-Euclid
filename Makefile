@@ -65,7 +65,6 @@ $(OUTFOLDER):
 $(PRUNEDFOLDER):
 	mkdir $(PRUNEDFOLDER)
 
-
 clean: CoqMakefile
 	make -C coqine/encodings clean
 	make -C coqine - clean
@@ -74,11 +73,12 @@ clean: CoqMakefile
 	rm -f $(BUILD_FOLDER)/*.dk
 	rm -f $(BUILD_FOLDER)/*.dko
 	rm -f $(BUILD_FOLDER)/config.v
-    rm -f $(BUILD_FOLDER)/.*.aux
 	rm -f $(BUILD_FOLDER)/*.vo
 	rm -f $(BUILD_FOLDER)/*.conf
-	rm -rf .depend
+	rm -f .depend
 	rm CoqMakefile
+	rm *.conf
+	rm *.glob
 
 fullclean: clean
 	make -C coqine - fullclean
