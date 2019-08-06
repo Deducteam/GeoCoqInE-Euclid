@@ -27,10 +27,10 @@ compile: CoqMakefile
 	make -f CoqMakefile
 
 # Generate the [.dk] files by executing [main.v]
-generate: compile $(OUTFOLDER) $(PRUNEDFOLDER)
-	$(COQC) -init-file .coqrc -w all -R $(BUILD_FOLDER) Top $(BUILD_FOLDER)/main.v
+generate: compile $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
+	$(COQC) -init-file .coqrc -w all -R . Top $(BUILD_FOLDER)/main.v
 
-$(BUILD_FOLDER)/config.dk: generate $(OUTFOLDER)
+$(BUILD_FOLDER)/config.dk: $(BUILD_FOLDER) generate $(OUTFOLDER)
 	ls $(OUTFOLDER)/*GeoCoq*.dk | sed -e "s:out/Top__:#REQUIRE Top__:g" | sed -e "s/.dk/./g" > $(BUILD_FOLDER)/config.dk
 
 prune: generate $(PRUNEDFOLDER) $(OUTFOLDER) $(BUILD_FOLDER)/config.dk
@@ -40,23 +40,23 @@ prune: generate $(PRUNEDFOLDER) $(OUTFOLDER) $(BUILD_FOLDER)/config.dk
 CoqMakefile: Make
 	$(COQ_MAKEFILE) -f Make -o CoqMakefile
 
-$(BUILD_FOLDER)/C.dk:
+$(BUILD_FOLDER)/C.dk: $(BUILD_FOLDER)
 	make -C coqine/encodings _build/predicates/C.dk
 	cp encodings/_build/predicates/C.dk $(BUILD_FOLDER)
 
-$(BUILD_FOLDER)/config.v:
+$(BUILD_FOLDER)/config.v: $(BUILD_FOLDER)
 	make -C coqine/encodings _build/predicates/C.config
 	cp encodings/_build/predicates/C.config $(BUILD_FOLDER)/config.v
 	echo "Dedukti Set Encoding \"template\"." >> $(BUILD_FOLDER)/config.v
 
 # Generate the dependencies of [.dk] files
-depend: $(PRUNEDFOLDER) prune
+depend: $(PRUNEDFOLDER) $(BUILD_FOLDER) prune
 	$(DKDEP) -I $(PRUNEDFOLDER) -I $(BUILD_FOLDER) $(PRUNEDFOLDER)/*.dk > .depend
 
 # Check and compile the generated [.dk]
 check: $(DKOS)
 
-%.dko: %.dk $(PRUNEDFOLDER) prune depend
+%.dko: %.dk $(PRUNEDFOLDER) $(BUILD_FOLDER) prune depend
 	$(DKCHECK) -I $(PRUNEDFOLDER) -I $(BUILD_FOLDER) --eta -e $<
 
 $(OUTFOLDER):
@@ -65,20 +65,22 @@ $(OUTFOLDER):
 $(PRUNEDFOLDER):
 	mkdir $(PRUNEDFOLDER)
 
+$(BUILD_FOLDER):
+	mkdir $(BUILD_FOLDER)
+
 clean: CoqMakefile
 	make -C coqine/encodings clean
 	make -C coqine - clean
 	make -f CoqMakefile - clean
-	rm -f $(OUTFOLDER) $(PRUNEDFOLDER)
-	rm -f $(BUILD_FOLDER)/*.dk
-	rm -f $(BUILD_FOLDER)/*.dko
-	rm -f $(BUILD_FOLDER)/config.v
-	rm -f $(BUILD_FOLDER)/*.vo
-	rm -f $(BUILD_FOLDER)/*.conf
+	rm -f $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
+	rm -f *.dk
+	rm -f *.dko
+	rm -f config.v
+	rm -f *.vo
 	rm -f .depend
-	rm CoqMakefile
-	rm *.conf
-	rm *.glob
+	rm -f CoqMakefile
+	rm -f *.conf
+	rm -f *.glob
 
 fullclean: clean
 	make -C coqine - fullclean
