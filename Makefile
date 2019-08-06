@@ -15,7 +15,7 @@ DKS = $(wildcard $(PRUNEDFOLDER)/*.dk)
 DKOS = $(DKS:.dk=.dko)
 
 
-.PHONY: all coqine compile generate depend prune clean fullclean
+.PHONY: all coqine compile generate depend prune check clean fullclean
 
 all: coqine compile generate prune check
 
@@ -50,13 +50,17 @@ config.v:
 	echo "Dedukti Set Encoding \"template\"." >> config.v
 
 # Generate the dependencies of [.dk] files
-depend: prune | $(PRUNEDFOLDER) $(BUILD_FOLDER)
+depend: prune $(BUILD_FOLDER)/C.dk | $(PRUNEDFOLDER) $(BUILD_FOLDER)
 	$(DKDEP) -I $(PRUNEDFOLDER) -I $(BUILD_FOLDER) $(PRUNEDFOLDER)/*.dk > .depend
 
-# Check and compile the generated [.dk]
-check: $(BUILD_FOLDER)/C.dk $(DKOS)
+# Make sure .depend is generated then do the actual check
+check: depend
+	make actual_check
 
-%.dko: %.dk prune depend | $(PRUNEDFOLDER) $(BUILD_FOLDER)
+# Check and compile the generated [.dk]
+actual_check: $(DKOS)
+
+%.dko: %.dk | $(PRUNEDFOLDER) $(BUILD_FOLDER)
 	$(DKCHECK) -I $(PRUNEDFOLDER) -I $(BUILD_FOLDER) --eta -e $<
 
 $(OUTFOLDER): | $(BUILD_FOLDER)
