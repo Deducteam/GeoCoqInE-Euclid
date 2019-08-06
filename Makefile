@@ -35,7 +35,7 @@ generate: coqine compile config.v | $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
 $(BUILD_FOLDER)/config.dk: generate | $(BUILD_FOLDER) $(OUTFOLDER)
 	ls $(OUTFOLDER)/*GeoCoq*.dk | sed -e "s:$(OUTFOLDER)/Top__:#REQUIRE Top__:g" | sed -e "s/.dk/./g" > $(BUILD_FOLDER)/config.dk
 
-prune: generate $(BUILD_FOLDER)/config.dk | $(PRUNEDFOLDER) $(OUTFOLDER)
+prune: generate $(BUILD_FOLDER)/C.dk $(BUILD_FOLDER)/config.dk | $(PRUNEDFOLDER) $(OUTFOLDER)
 	dkprune -l -I $(BUILD_FOLDER) -I $(OUTFOLDER) -o $(PRUNEDFOLDER) $(BUILD_FOLDER)/config.dk
 	rm -f $(PRUNEDFOLDER)/C.dk
 
@@ -53,7 +53,7 @@ config.v:
 	echo "Dedukti Set Param \"syntax\" \"CondensedDedukti\"." >> config.v
 
 # Generate the dependencies of [.dk] files
-depend: prune $(BUILD_FOLDER)/C.dk | $(PRUNEDFOLDER) $(BUILD_FOLDER)
+depend: prune | $(PRUNEDFOLDER) $(BUILD_FOLDER)
 	$(DKDEP) -I $(PRUNEDFOLDER) -I $(BUILD_FOLDER) $(PRUNEDFOLDER)/*.dk > .depend
 
 # Make sure .depend is generated then do the actual check
