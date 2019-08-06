@@ -1,6 +1,6 @@
 (* This script uses the Coqine plugin to export all files and parts. *)
 
-Require Coqine.
+Require Coqine.Coqine.
 
 Set Printing Universes.
 

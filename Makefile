@@ -5,7 +5,7 @@ DKCHECK      ?= dkcheck
 DKDEP        ?= dkdep
 VERBOSE      ?=
 
-BUILD_FOLDER = build
+BUILD_FOLDER = _build
 OUTFOLDER    = $(BUILD_FOLDER)/out
 PRUNEDFOLDER = $(BUILD_FOLDER)/pruned
 
@@ -28,7 +28,7 @@ compile: CoqMakefile
 
 # Generate the [.dk] files by executing [main.v]
 generate: compile $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
-	$(COQC) -init-file .coqrc -w all -R . Top $(BUILD_FOLDER)/main.v
+	$(COQC) -init-file .coqrc -w all -R . Top main.v
 
 $(BUILD_FOLDER)/config.dk: $(BUILD_FOLDER) generate $(OUTFOLDER)
 	ls $(OUTFOLDER)/*GeoCoq*.dk | sed -e "s:out/Top__:#REQUIRE Top__:g" | sed -e "s/.dk/./g" > $(BUILD_FOLDER)/config.dk
