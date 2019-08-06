@@ -28,5 +28,8 @@ make install
 
 git clone --recursive https://github.com/Deducteam/GeoCoqInE-Euclid.git <coqine-path>
 cd <coqine-path>
+
+<edit .coqrc file with current path>
+
 make
 ```

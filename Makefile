@@ -30,7 +30,7 @@ compile: CoqMakefile
 
 # Generate the [.dk] files by executing [main.v]
 generate: coqine compile config.v | $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
-	$(COQC) -w all -R . Top -R coqine/src Coqine main.v
+	$(COQC) -init-file .coqrc -w all -R . Top -R coqine/src Coqine main.v
 
 $(BUILD_FOLDER)/config.dk: generate | $(BUILD_FOLDER) $(OUTFOLDER)
 	ls $(OUTFOLDER)/*GeoCoq*.dk | sed -e "s:$(OUTFOLDER)/Top__:#REQUIRE Top__:g" | sed -e "s/.dk/./g" > $(BUILD_FOLDER)/config.dk
