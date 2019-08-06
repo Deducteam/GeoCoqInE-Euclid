@@ -1,7 +1,8 @@
 # Library name
 -R elements GeoCoq
+-R build Top
 
-import.v
+Top/import.v
 
 # Coq files
 GeoCoq/Axioms/euclidean_axioms.v
