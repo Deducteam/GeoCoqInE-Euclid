@@ -1,3 +1,1 @@
-Add LoadPath "./coqine/src" as Coqine.
-
-Add ML Path "./coqine/src".
+Add ML Path "/home/gferey/git/coqine/src/".

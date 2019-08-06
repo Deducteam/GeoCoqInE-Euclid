@@ -1,3 +1,6 @@
+-arg -w
+-arg all
+
 import.v
 
 # Coq files
@@ -5,8 +8,6 @@ GeoCoq/Elements/OriginalProofs/euclidean_defs.v
 GeoCoq/Elements/OriginalProofs/general_tactics.v
 GeoCoq/Elements/OriginalProofs/euclidean_tactics.v
 GeoCoq/Elements/OriginalProofs/lemma_congruencesymmetric.v
-
-
 
 # GeoCoq/Axioms/euclidean_axioms.v
 # GeoCoq/Elements/OriginalProofs/euclidean_defs.v

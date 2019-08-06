@@ -15,9 +15,9 @@ DKS = $(wildcard $(PRUNEDFOLDER)/*.dk)
 DKOS = $(DKS:.dk=.dko)
 
 
-.PHONY: all coqine compile generate depend clean fullclean
+.PHONY: all coqine compile generate depend prune clean fullclean
 
-all: coqine compile generate depend
+all: coqine compile generate prune check
 
 coqine:
 	make -C coqine
@@ -27,42 +27,42 @@ compile: CoqMakefile
 	make -f CoqMakefile
 
 # Generate the [.dk] files by executing [main.v]
-generate: compile $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
-	$(COQC) -init-file .coqrc -w all -R . Top main.v
+generate: coqine compile config.v | $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
+	$(COQC) -w all -R . Top -R coqine/src Coqine main.v
 
-$(BUILD_FOLDER)/config.dk: $(BUILD_FOLDER) generate $(OUTFOLDER)
-	ls $(OUTFOLDER)/*GeoCoq*.dk | sed -e "s:out/Top__:#REQUIRE Top__:g" | sed -e "s/.dk/./g" > $(BUILD_FOLDER)/config.dk
+$(BUILD_FOLDER)/config.dk: generate | $(BUILD_FOLDER) $(OUTFOLDER)
+	ls $(OUTFOLDER)/*GeoCoq*.dk | sed -e "s:$(OUTFOLDER)/Top__:#REQUIRE Top__:g" | sed -e "s/.dk/./g" > $(BUILD_FOLDER)/config.dk
 
-prune: generate $(PRUNEDFOLDER) $(OUTFOLDER) $(BUILD_FOLDER)/config.dk
-	dkprune -l -I $(OUTFOLDER) -o $(PRUNEDFOLDER) $(BUILD_FOLDER)/config.dk
+prune: generate $(BUILD_FOLDER)/config.dk | $(PRUNEDFOLDER) $(OUTFOLDER)
+	dkprune -l -I $(BUILD_FOLDER) -I $(OUTFOLDER) -o $(PRUNEDFOLDER) $(BUILD_FOLDER)/config.dk
 	rm -f $(PRUNEDFOLDER)/C.dk
 
 CoqMakefile: Make
 	$(COQ_MAKEFILE) -f Make -o CoqMakefile
 
-$(BUILD_FOLDER)/C.dk: $(BUILD_FOLDER)
+$(BUILD_FOLDER)/C.dk: | $(BUILD_FOLDER)
 	make -C coqine/encodings _build/predicates/C.dk
-	cp encodings/_build/predicates/C.dk $(BUILD_FOLDER)
+	cp coqine/encodings/_build/predicates/C.dk $(BUILD_FOLDER)
 
 config.v:
 	make -C coqine/encodings _build/predicates/C.config
-	cp encodings/_build/predicates/C.config config.v
+	cp coqine/encodings/_build/predicates/C.config config.v
 	echo "Dedukti Set Encoding \"template\"." >> config.v
 
 # Generate the dependencies of [.dk] files
-depend: $(PRUNEDFOLDER) $(BUILD_FOLDER) prune
+depend: prune | $(PRUNEDFOLDER) $(BUILD_FOLDER)
 	$(DKDEP) -I $(PRUNEDFOLDER) -I $(BUILD_FOLDER) $(PRUNEDFOLDER)/*.dk > .depend
 
 # Check and compile the generated [.dk]
-check: $(DKOS)
+check: $(BUILD_FOLDER)/C.dk $(DKOS)
 
-%.dko: %.dk $(PRUNEDFOLDER) $(BUILD_FOLDER) prune depend
+%.dko: %.dk prune depend | $(PRUNEDFOLDER) $(BUILD_FOLDER)
 	$(DKCHECK) -I $(PRUNEDFOLDER) -I $(BUILD_FOLDER) --eta -e $<
 
-$(OUTFOLDER): $(BUILD_FOLDER)
+$(OUTFOLDER): | $(BUILD_FOLDER)
 	mkdir $(OUTFOLDER)
 
-$(PRUNEDFOLDER): $(BUILD_FOLDER)
+$(PRUNEDFOLDER): | $(BUILD_FOLDER)
 	mkdir $(PRUNEDFOLDER)
 
 $(BUILD_FOLDER):
@@ -72,7 +72,7 @@ clean: CoqMakefile
 	make -C coqine/encodings clean
 	make -C coqine - clean
 	make -f CoqMakefile - clean
-	rm -f $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
+	rm -rf $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
 	rm -f *.dk
 	rm -f *.dko
 	rm -f config.v
