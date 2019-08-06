@@ -44,10 +44,10 @@ $(BUILD_FOLDER)/C.dk: $(BUILD_FOLDER)
 	make -C coqine/encodings _build/predicates/C.dk
 	cp encodings/_build/predicates/C.dk $(BUILD_FOLDER)
 
-$(BUILD_FOLDER)/config.v: $(BUILD_FOLDER)
+config.v:
 	make -C coqine/encodings _build/predicates/C.config
-	cp encodings/_build/predicates/C.config $(BUILD_FOLDER)/config.v
-	echo "Dedukti Set Encoding \"template\"." >> $(BUILD_FOLDER)/config.v
+	cp encodings/_build/predicates/C.config config.v
+	echo "Dedukti Set Encoding \"template\"." >> config.v
 
 # Generate the dependencies of [.dk] files
 depend: $(PRUNEDFOLDER) $(BUILD_FOLDER) prune
@@ -59,10 +59,10 @@ check: $(DKOS)
 %.dko: %.dk $(PRUNEDFOLDER) $(BUILD_FOLDER) prune depend
 	$(DKCHECK) -I $(PRUNEDFOLDER) -I $(BUILD_FOLDER) --eta -e $<
 
-$(OUTFOLDER):
+$(OUTFOLDER): $(BUILD_FOLDER)
 	mkdir $(OUTFOLDER)
 
-$(PRUNEDFOLDER):
+$(PRUNEDFOLDER): $(BUILD_FOLDER)
 	mkdir $(PRUNEDFOLDER)
 
 $(BUILD_FOLDER):
