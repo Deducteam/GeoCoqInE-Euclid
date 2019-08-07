@@ -18,20 +18,21 @@ sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.
 opam init
 eval `opam config env`
 opam switch create 4.06.0
-
 eval `opam config env`
-opam install menhir coq.8.8.1
 
+opam install menhir
 git clone https://github.com/Deducteam/Dedukti.git <dedukti-path>
 cd <dedukti-path>
+
+git checkout dkprune
+make install
+git checkout master
 make install
 
-git clone https://github.com/francoisthire/dkprune.git <dkprune-path>
-cd <dkprune-path>
-make install
-
+opam install coq.8.8.1
 git clone --recursive https://github.com/Deducteam/GeoCoqInE-Euclid.git <coqine-path>
 cd <coqine-path>
+git submodule update --init --recursive
 
 <edit .coqrc file with current path>
 
