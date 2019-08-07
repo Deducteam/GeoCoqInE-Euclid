@@ -36,5 +36,6 @@ git submodule update --init --recursive
 
 <edit .coqrc file with current path>
 
+git submodule update --recursive --remote
 make
 ```
