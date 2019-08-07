@@ -22,7 +22,7 @@ DKOS = $(DKS:.dk=.dko)
 all: coqine compile generate prune check
 
 coqine:
-	make -C coqine
+	make -C $(COQINEPATH)
 
 # Compile the local [.v] files that are not part of the stdlib
 compile: CoqMakefile
@@ -30,7 +30,7 @@ compile: CoqMakefile
 
 # Generate the [.dk] files by executing [main.v]
 generate: coqine compile config.v | $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
-	$(COQC) -init-file .coqrc -w all -R . Top -R coqine/src Coqine main.v
+	$(COQC) -init-file $(COQINEPATH)/.coqrc -w all -R . Top -R $(COQINEPATH)/src Coqine main.v
 
 $(BUILD_FOLDER)/config.dk: generate | $(BUILD_FOLDER) $(OUTFOLDER)
 	ls $(OUTFOLDER)/*GeoCoq*.dk | sed -e "s:$(OUTFOLDER)/Top__:#REQUIRE Top__:g" | sed -e "s/.dk/./g" > $(BUILD_FOLDER)/config.dk
@@ -43,12 +43,12 @@ CoqMakefile: Make
 	$(COQ_MAKEFILE) -f Make -o CoqMakefile
 
 $(BUILD_FOLDER)/C.dk: | $(BUILD_FOLDER)
-	make -C coqine/encodings _build/$(ENCODING)/C.dk
-	cp coqine/encodings/_build/$(ENCODING)/C.dk $(BUILD_FOLDER)
+	make -C $(COQINEPATH)/encodings _build/$(ENCODING)/C.dk
+	cp $(COQINEPATH)/encodings/_build/$(ENCODING)/C.dk $(BUILD_FOLDER)
 
 config.v:
-	make -C coqine/encodings _build/predicates/C.config
-	cp coqine/encodings/_build/predicates/C.config config.v
+	make -C $(COQINEPATH)/encodings _build/predicates/C.config
+	cp $(COQINEPATH)/encodings/_build/predicates/C.config config.v
 	echo "Dedukti Set Param \"syntax\" \"Dedukti\"." >> config.v
 	echo "Dedukti Set Param \"simpl_letins\" \"true\"." >> config.v
 
@@ -76,8 +76,8 @@ $(BUILD_FOLDER):
 	mkdir $(BUILD_FOLDER)
 
 clean: CoqMakefile
-	make -C coqine/encodings clean
-	make -C coqine - clean
+	make -C $(COQINEPATH)/encodings clean
+	make -C $(COQINEPATH) - clean
 	make -f CoqMakefile - clean
 	rm -rf $(OUTFOLDER) $(PRUNEDFOLDER) $(BUILD_FOLDER)
 	rm -f *.dk
@@ -90,6 +90,6 @@ clean: CoqMakefile
 	rm -f *.glob
 
 fullclean: clean
-	make -C coqine - fullclean
+	make -C $(COQINEPATH) - fullclean
 
 -include .depend
