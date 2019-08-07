@@ -44,8 +44,6 @@ Require Import GeoCoq.Elements.OriginalProofs.lemma_rayimpliescollinear.
 Require Import GeoCoq.Elements.OriginalProofs.lemma_collinearitypreserved.
 Require Import GeoCoq.Elements.OriginalProofs.lemma_raystrict.
 Require Import GeoCoq.Elements.OriginalProofs.lemma_equalanglesNC.
-
-(*
 Require Import GeoCoq.Elements.OriginalProofs.lemma_ray.
 Require Import GeoCoq.Elements.OriginalProofs.lemma_ray1.
 Require Import GeoCoq.Elements.OriginalProofs.lemma_interior5.
@@ -243,4 +241,3 @@ Require Import GeoCoq.Elements.OriginalProofs.lemma_rectangleparallelogram.
 Require Import GeoCoq.Elements.OriginalProofs.lemma_paste5.
 Require Import GeoCoq.Elements.OriginalProofs.proposition_48.
 Require Import GeoCoq.Elements.OriginalProofs.book1.
- *)

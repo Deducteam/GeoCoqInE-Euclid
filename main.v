@@ -11,8 +11,9 @@ Dedukti Set Debug "_build/debug.out".
 
 Dedukti Set Encoding "template".
 
-Dedukti Filter Out "Coq.Init.Logic.rew_ex".
-Dedukti Filter Out "Coq.Init.Logic.rew_ex2".
+(* Filtering symbols relying on letins *)
+Dedukti Filter Out "Coq.Init.Logic.eq_id_comm_r".
+Dedukti Filter Out "Coq.Init.Specif.dependent_choice".
 
 Dedukti Enable Failproofmode.
 

@@ -48,202 +48,200 @@ GeoCoq/Elements/OriginalProofs/lemma_rayimpliescollinear.v
 GeoCoq/Elements/OriginalProofs/lemma_collinearitypreserved.v
 GeoCoq/Elements/OriginalProofs/lemma_raystrict.v
 GeoCoq/Elements/OriginalProofs/lemma_equalanglesNC.v
-
-
-# GeoCoq/Elements/OriginalProofs/lemma_ray.v
-# GeoCoq/Elements/OriginalProofs/lemma_ray1.v
-# GeoCoq/Elements/OriginalProofs/lemma_interior5.v
-# GeoCoq/Elements/OriginalProofs/lemma_layoffunique.v
-# GeoCoq/Elements/OriginalProofs/lemma_ray4.v
-# GeoCoq/Elements/OriginalProofs/lemma_ray5.v
-# GeoCoq/Elements/OriginalProofs/lemma_ray3.v
-# GeoCoq/Elements/OriginalProofs/proposition_04.v
-# GeoCoq/Elements/OriginalProofs/lemma_ABCequalsCBA.v
-# GeoCoq/Elements/OriginalProofs/proposition_05.v
-# GeoCoq/Elements/OriginalProofs/lemma_supplements.v
-# GeoCoq/Elements/OriginalProofs/proposition_05b.v
-# GeoCoq/Elements/OriginalProofs/lemma_equalanglessymmetric.v
-# GeoCoq/Elements/OriginalProofs/lemma_angledistinct.v
-# GeoCoq/Elements/OriginalProofs/lemma_layoff.v
-# GeoCoq/Elements/OriginalProofs/lemma_equalangleshelper.v
-# GeoCoq/Elements/OriginalProofs/lemma_equalanglestransitive.v
-# GeoCoq/Elements/OriginalProofs/lemma_angleorderrespectscongruence2.v
-# GeoCoq/Elements/OriginalProofs/lemma_equalanglesreflexive.v
-# GeoCoq/Elements/OriginalProofs/lemma_NCorder.v
-# GeoCoq/Elements/OriginalProofs/lemma_angleorderrespectscongruence.v
-# GeoCoq/Elements/OriginalProofs/lemma_crossbar.v
-# GeoCoq/Elements/OriginalProofs/lemma_angleordertransitive.v
-# GeoCoq/Elements/OriginalProofs/lemma_9_5b.v
-# GeoCoq/Elements/OriginalProofs/lemma_9_5a.v
-# GeoCoq/Elements/OriginalProofs/lemma_sameside2.v
-# GeoCoq/Elements/OriginalProofs/lemma_twolines.v
-# GeoCoq/Elements/OriginalProofs/proposition_10.v
-# GeoCoq/Elements/OriginalProofs/proposition_12.v
-# GeoCoq/Elements/OriginalProofs/lemma_samesidesymmetric.v
-# GeoCoq/Elements/OriginalProofs/lemma_twolines2.v
-# GeoCoq/Elements/OriginalProofs/lemma_collinear5.v
-# GeoCoq/Elements/OriginalProofs/lemma_planeseparation.v
-# GeoCoq/Elements/OriginalProofs/lemma_lessthantransitive.v
-# GeoCoq/Elements/OriginalProofs/lemma_midpointunique.v
-# GeoCoq/Elements/OriginalProofs/lemma_rightangleNC.v
-# GeoCoq/Elements/OriginalProofs/lemma_8_2.v
-# GeoCoq/Elements/OriginalProofs/lemma_8_3.v
-# GeoCoq/Elements/OriginalProofs/lemma_collinearright.v
-# GeoCoq/Elements/OriginalProofs/lemma_rightreverse.v
-# GeoCoq/Elements/OriginalProofs/lemma_altitudebisectsbase.v
-# GeoCoq/Elements/OriginalProofs/lemma_droppedperpendicularunique.v
-# GeoCoq/Elements/OriginalProofs/lemma_fiveline.v
-# GeoCoq/Elements/OriginalProofs/proposition_07.v
-# GeoCoq/Elements/OriginalProofs/lemma_angletrichotomy.v
-# GeoCoq/Elements/OriginalProofs/proposition_06a.v
-# GeoCoq/Elements/OriginalProofs/lemma_trichotomy1.v
-# GeoCoq/Elements/OriginalProofs/proposition_06.v
-# GeoCoq/Elements/OriginalProofs/proposition_08.v
-# GeoCoq/Elements/OriginalProofs/proposition_09.v
-# GeoCoq/Elements/OriginalProofs/lemma_samesidereflexive.v
-# GeoCoq/Elements/OriginalProofs/lemma_8_7.v
-# GeoCoq/Elements/OriginalProofs/lemma_notperp.v
-# GeoCoq/Elements/OriginalProofs/lemma_lessthancongruence2.v
-# GeoCoq/Elements/OriginalProofs/proposition_15.v
-# GeoCoq/Elements/OriginalProofs/lemma_pointreflectionisometry.v
-# GeoCoq/Elements/OriginalProofs/lemma_oppositesidesymmetric.v
-# GeoCoq/Elements/OriginalProofs/proposition_11B.v
-# GeoCoq/Elements/OriginalProofs/proposition_11.v
-# GeoCoq/Elements/OriginalProofs/lemma_NChelper.v
-# GeoCoq/Elements/OriginalProofs/proposition_13.v
-# GeoCoq/Elements/OriginalProofs/proposition_14.v
-# GeoCoq/Elements/OriginalProofs/proposition_16.v
-# GeoCoq/Elements/OriginalProofs/proposition_17.v
-# GeoCoq/Elements/OriginalProofs/proposition_18.v
-# GeoCoq/Elements/OriginalProofs/proposition_19.v
-# GeoCoq/Elements/OriginalProofs/proposition_20.v
-# GeoCoq/Elements/OriginalProofs/lemma_lessthanbetween.v
-# GeoCoq/Elements/OriginalProofs/lemma_trichotomy2.v
-# GeoCoq/Elements/OriginalProofs/lemma_lessthanadditive.v
-# GeoCoq/Elements/OriginalProofs/lemma_21helper.v
-# GeoCoq/Elements/OriginalProofs/lemma_TGsymmetric.v
-# GeoCoq/Elements/OriginalProofs/lemma_TTorder.v
-# GeoCoq/Elements/OriginalProofs/lemma_TGflip.v
-# GeoCoq/Elements/OriginalProofs/lemma_TTflip.v
-# GeoCoq/Elements/OriginalProofs/lemma_TTtransitive.v
-# GeoCoq/Elements/OriginalProofs/lemma_TTflip2.v
-# GeoCoq/Elements/OriginalProofs/proposition_21.v
-# GeoCoq/Elements/OriginalProofs/lemma_lessthannotequal.v
-# GeoCoq/Elements/OriginalProofs/lemma_together.v
-# GeoCoq/Elements/OriginalProofs/lemma_subtractequals.v
-# GeoCoq/Elements/OriginalProofs/lemma_ondiameter.v
-# GeoCoq/Elements/OriginalProofs/proposition_22.v
-# GeoCoq/Elements/OriginalProofs/proposition_23.v
-# GeoCoq/Elements/OriginalProofs/lemma_linereflectionisometry.v
-# GeoCoq/Elements/OriginalProofs/lemma_10_12.v
-# GeoCoq/Elements/OriginalProofs/lemma_Euclid4.v
-# GeoCoq/Elements/OriginalProofs/lemma_equalanglesflip.v
-# GeoCoq/Elements/OriginalProofs/lemma_9_5.v
-# GeoCoq/Elements/OriginalProofs/proposition_23B.v
-# GeoCoq/Elements/OriginalProofs/proposition_23C.v
-# GeoCoq/Elements/OriginalProofs/proposition_24.v
-# GeoCoq/Elements/OriginalProofs/lemma_angletrichotomy2.v
-# GeoCoq/Elements/OriginalProofs/proposition_25.v
-# GeoCoq/Elements/OriginalProofs/proposition_26A.v
-# GeoCoq/Elements/OriginalProofs/lemma_26helper.v
-# GeoCoq/Elements/OriginalProofs/proposition_26B.v
-# GeoCoq/Elements/OriginalProofs/lemma_collinearbetween.v
-# GeoCoq/Elements/OriginalProofs/proposition_27.v
-# GeoCoq/Elements/OriginalProofs/lemma_collinearparallel.v
-# GeoCoq/Elements/OriginalProofs/lemma_parallelsymmetric.v
-# GeoCoq/Elements/OriginalProofs/lemma_parallelflip.v
-# GeoCoq/Elements/OriginalProofs/proposition_27B.v
-# GeoCoq/Elements/OriginalProofs/proposition_28A.v
-# GeoCoq/Elements/OriginalProofs/lemma_supplementsymmetric.v
-# GeoCoq/Elements/OriginalProofs/proposition_28B.v
-# GeoCoq/Elements/OriginalProofs/proposition_28C.v
-# GeoCoq/Elements/OriginalProofs/proposition_31.v
-# GeoCoq/Elements/OriginalProofs/lemma_crossbar2.v
-# GeoCoq/Elements/OriginalProofs/lemma_supplementinequality.v
-# GeoCoq/Elements/OriginalProofs/proposition_29.v
-# GeoCoq/Elements/OriginalProofs/proposition_29B.v
-# GeoCoq/Elements/OriginalProofs/lemma_parallelNC.v
-# GeoCoq/Elements/OriginalProofs/proposition_29C.v
-# GeoCoq/Elements/OriginalProofs/proposition_30A.v
-# GeoCoq/Elements/OriginalProofs/proposition_30B.v
-# GeoCoq/Elements/OriginalProofs/lemma_parallelcollinear1.v
-# GeoCoq/Elements/OriginalProofs/lemma_tarskiparallelflip.v
-# GeoCoq/Elements/OriginalProofs/lemma_parallelcollinear2.v
-# GeoCoq/Elements/OriginalProofs/lemma_parallelcollinear.v
-# GeoCoq/Elements/OriginalProofs/lemma_paralleldef2B.v
-# GeoCoq/Elements/OriginalProofs/lemma_crisscross.v
-# GeoCoq/Elements/OriginalProofs/lemma_30helper.v
-# GeoCoq/Elements/OriginalProofs/lemma_crossimpliesopposite.v
-# GeoCoq/Elements/OriginalProofs/proposition_30.v
-# GeoCoq/Elements/OriginalProofs/proposition_31short.v
-# GeoCoq/Elements/OriginalProofs/proposition_32.v
-# GeoCoq/Elements/OriginalProofs/lemma_samenotopposite.v
-# GeoCoq/Elements/OriginalProofs/proposition_33.v
-# GeoCoq/Elements/OriginalProofs/proposition_33B.v
-# GeoCoq/Elements/OriginalProofs/lemma_diagonalsmeet.v
-# GeoCoq/Elements/OriginalProofs/proposition_34.v
-# GeoCoq/Elements/OriginalProofs/lemma_35helper.v
-# GeoCoq/Elements/OriginalProofs/lemma_TCreflexive.v
-# GeoCoq/Elements/OriginalProofs/lemma_ETreflexive.v
-# GeoCoq/Elements/OriginalProofs/lemma_PGrotate.v
-# GeoCoq/Elements/OriginalProofs/lemma_PGsymmetric.v
-# GeoCoq/Elements/OriginalProofs/lemma_PGflip.v
-# GeoCoq/Elements/OriginalProofs/lemma_diagonalsbisect.v
-# GeoCoq/Elements/OriginalProofs/lemma_trapezoiddiagonals.v
-# GeoCoq/Elements/OriginalProofs/lemma_EFreflexive.v
-# GeoCoq/Elements/OriginalProofs/proposition_35A.v
-# GeoCoq/Elements/OriginalProofs/lemma_parallelPasch.v
-# GeoCoq/Elements/OriginalProofs/proposition_35.v
-# GeoCoq/Elements/OriginalProofs/lemma_collinearparallel2.v
-# GeoCoq/Elements/OriginalProofs/proposition_36.v
-# GeoCoq/Elements/OriginalProofs/proposition_36A.v
-# GeoCoq/Elements/OriginalProofs/lemma_samesidetransitive.v
-# GeoCoq/Elements/OriginalProofs/lemma_Playfairhelper.v
-# GeoCoq/Elements/OriginalProofs/lemma_Playfairhelper2.v
-# GeoCoq/Elements/OriginalProofs/lemma_Playfair.v
-# GeoCoq/Elements/OriginalProofs/lemma_triangletoparallelogram.v
-# GeoCoq/Elements/OriginalProofs/proposition_37.v
-# GeoCoq/Elements/OriginalProofs/proposition_38.v
-# GeoCoq/Elements/OriginalProofs/proposition_39A.v
-# GeoCoq/Elements/OriginalProofs/lemma_samesideflip.v
-# GeoCoq/Elements/OriginalProofs/proposition_39.v
-# GeoCoq/Elements/OriginalProofs/proposition_40.v
-# GeoCoq/Elements/OriginalProofs/proposition_41.v
-# GeoCoq/Elements/OriginalProofs/lemma_samesidecollinear.v
-# GeoCoq/Elements/OriginalProofs/proposition_42.v
-# GeoCoq/Elements/OriginalProofs/proposition_42B.v
-# GeoCoq/Elements/OriginalProofs/lemma_supplements2.v
-# GeoCoq/Elements/OriginalProofs/proposition_28D.v
-# GeoCoq/Elements/OriginalProofs/proposition_43B.v
-# GeoCoq/Elements/OriginalProofs/proposition_43.v
-# GeoCoq/Elements/OriginalProofs/lemma_parallelbetween.v
-# GeoCoq/Elements/OriginalProofs/proposition_44A.v
-# GeoCoq/Elements/OriginalProofs/proposition_44.v
-# GeoCoq/Elements/OriginalProofs/lemma_RTcongruence.v
-# GeoCoq/Elements/OriginalProofs/lemma_RTsymmetric.v
-# GeoCoq/Elements/OriginalProofs/proposition_45.v
-# GeoCoq/Elements/OriginalProofs/lemma_equaltorightisright.v
-# GeoCoq/Elements/OriginalProofs/proposition_46.v
-# GeoCoq/Elements/OriginalProofs/lemma_oppositesideflip.v
-# GeoCoq/Elements/OriginalProofs/lemma_righttogether.v
-# GeoCoq/Elements/OriginalProofs/lemma_squareparallelogram.v
-# GeoCoq/Elements/OriginalProofs/lemma_erectedperpendicularunique.v
-# GeoCoq/Elements/OriginalProofs/lemma_twoperpsparallel.v
-# GeoCoq/Elements/OriginalProofs/lemma_legsmallerhypotenuse.v
-# GeoCoq/Elements/OriginalProofs/lemma_tworays.v
-# GeoCoq/Elements/OriginalProofs/lemma_altitudeofrighttriangle.v
-# GeoCoq/Elements/OriginalProofs/proposition_47A.v
-# GeoCoq/Elements/OriginalProofs/lemma_angleaddition.v
-# GeoCoq/Elements/OriginalProofs/proposition_47B.v
-# GeoCoq/Elements/OriginalProofs/lemma_supplementofright.v
-# GeoCoq/Elements/OriginalProofs/lemma_PGrectangle.v
-# GeoCoq/Elements/OriginalProofs/lemma_squarerectangle.v
-# GeoCoq/Elements/OriginalProofs/proposition_48A.v
-# GeoCoq/Elements/OriginalProofs/lemma_squareflip.v
-# GeoCoq/Elements/OriginalProofs/proposition_47.v
-# GeoCoq/Elements/OriginalProofs/lemma_squaresequal.v
-# GeoCoq/Elements/OriginalProofs/lemma_rectanglerotate.v
-# GeoCoq/Elements/OriginalProofs/lemma_rectangleparallelogram.v
-# GeoCoq/Elements/OriginalProofs/lemma_paste5.v
-# GeoCoq/Elements/OriginalProofs/proposition_48.v
-# GeoCoq/Elements/OriginalProofs/book1.v
+GeoCoq/Elements/OriginalProofs/lemma_ray.v
+GeoCoq/Elements/OriginalProofs/lemma_ray1.v
+GeoCoq/Elements/OriginalProofs/lemma_interior5.v
+GeoCoq/Elements/OriginalProofs/lemma_layoffunique.v
+GeoCoq/Elements/OriginalProofs/lemma_ray4.v
+GeoCoq/Elements/OriginalProofs/lemma_ray5.v
+GeoCoq/Elements/OriginalProofs/lemma_ray3.v
+GeoCoq/Elements/OriginalProofs/proposition_04.v
+GeoCoq/Elements/OriginalProofs/lemma_ABCequalsCBA.v
+GeoCoq/Elements/OriginalProofs/proposition_05.v
+GeoCoq/Elements/OriginalProofs/lemma_supplements.v
+GeoCoq/Elements/OriginalProofs/proposition_05b.v
+GeoCoq/Elements/OriginalProofs/lemma_equalanglessymmetric.v
+GeoCoq/Elements/OriginalProofs/lemma_angledistinct.v
+GeoCoq/Elements/OriginalProofs/lemma_layoff.v
+GeoCoq/Elements/OriginalProofs/lemma_equalangleshelper.v
+GeoCoq/Elements/OriginalProofs/lemma_equalanglestransitive.v
+GeoCoq/Elements/OriginalProofs/lemma_angleorderrespectscongruence2.v
+GeoCoq/Elements/OriginalProofs/lemma_equalanglesreflexive.v
+GeoCoq/Elements/OriginalProofs/lemma_NCorder.v
+GeoCoq/Elements/OriginalProofs/lemma_angleorderrespectscongruence.v
+GeoCoq/Elements/OriginalProofs/lemma_crossbar.v
+GeoCoq/Elements/OriginalProofs/lemma_angleordertransitive.v
+GeoCoq/Elements/OriginalProofs/lemma_9_5b.v
+GeoCoq/Elements/OriginalProofs/lemma_9_5a.v
+GeoCoq/Elements/OriginalProofs/lemma_sameside2.v
+GeoCoq/Elements/OriginalProofs/lemma_twolines.v
+GeoCoq/Elements/OriginalProofs/proposition_10.v
+GeoCoq/Elements/OriginalProofs/proposition_12.v
+GeoCoq/Elements/OriginalProofs/lemma_samesidesymmetric.v
+GeoCoq/Elements/OriginalProofs/lemma_twolines2.v
+GeoCoq/Elements/OriginalProofs/lemma_collinear5.v
+GeoCoq/Elements/OriginalProofs/lemma_planeseparation.v
+GeoCoq/Elements/OriginalProofs/lemma_lessthantransitive.v
+GeoCoq/Elements/OriginalProofs/lemma_midpointunique.v
+GeoCoq/Elements/OriginalProofs/lemma_rightangleNC.v
+GeoCoq/Elements/OriginalProofs/lemma_8_2.v
+GeoCoq/Elements/OriginalProofs/lemma_8_3.v
+GeoCoq/Elements/OriginalProofs/lemma_collinearright.v
+GeoCoq/Elements/OriginalProofs/lemma_rightreverse.v
+GeoCoq/Elements/OriginalProofs/lemma_altitudebisectsbase.v
+GeoCoq/Elements/OriginalProofs/lemma_droppedperpendicularunique.v
+GeoCoq/Elements/OriginalProofs/lemma_fiveline.v
+GeoCoq/Elements/OriginalProofs/proposition_07.v
+GeoCoq/Elements/OriginalProofs/lemma_angletrichotomy.v
+GeoCoq/Elements/OriginalProofs/proposition_06a.v
+GeoCoq/Elements/OriginalProofs/lemma_trichotomy1.v
+GeoCoq/Elements/OriginalProofs/proposition_06.v
+GeoCoq/Elements/OriginalProofs/proposition_08.v
+GeoCoq/Elements/OriginalProofs/proposition_09.v
+GeoCoq/Elements/OriginalProofs/lemma_samesidereflexive.v
+GeoCoq/Elements/OriginalProofs/lemma_8_7.v
+GeoCoq/Elements/OriginalProofs/lemma_notperp.v
+GeoCoq/Elements/OriginalProofs/lemma_lessthancongruence2.v
+GeoCoq/Elements/OriginalProofs/proposition_15.v
+GeoCoq/Elements/OriginalProofs/lemma_pointreflectionisometry.v
+GeoCoq/Elements/OriginalProofs/lemma_oppositesidesymmetric.v
+GeoCoq/Elements/OriginalProofs/proposition_11B.v
+GeoCoq/Elements/OriginalProofs/proposition_11.v
+GeoCoq/Elements/OriginalProofs/lemma_NChelper.v
+GeoCoq/Elements/OriginalProofs/proposition_13.v
+GeoCoq/Elements/OriginalProofs/proposition_14.v
+GeoCoq/Elements/OriginalProofs/proposition_16.v
+GeoCoq/Elements/OriginalProofs/proposition_17.v
+GeoCoq/Elements/OriginalProofs/proposition_18.v
+GeoCoq/Elements/OriginalProofs/proposition_19.v
+GeoCoq/Elements/OriginalProofs/proposition_20.v
+GeoCoq/Elements/OriginalProofs/lemma_lessthanbetween.v
+GeoCoq/Elements/OriginalProofs/lemma_trichotomy2.v
+GeoCoq/Elements/OriginalProofs/lemma_lessthanadditive.v
+GeoCoq/Elements/OriginalProofs/lemma_21helper.v
+GeoCoq/Elements/OriginalProofs/lemma_TGsymmetric.v
+GeoCoq/Elements/OriginalProofs/lemma_TTorder.v
+GeoCoq/Elements/OriginalProofs/lemma_TGflip.v
+GeoCoq/Elements/OriginalProofs/lemma_TTflip.v
+GeoCoq/Elements/OriginalProofs/lemma_TTtransitive.v
+GeoCoq/Elements/OriginalProofs/lemma_TTflip2.v
+GeoCoq/Elements/OriginalProofs/proposition_21.v
+GeoCoq/Elements/OriginalProofs/lemma_lessthannotequal.v
+GeoCoq/Elements/OriginalProofs/lemma_together.v
+GeoCoq/Elements/OriginalProofs/lemma_subtractequals.v
+GeoCoq/Elements/OriginalProofs/lemma_ondiameter.v
+GeoCoq/Elements/OriginalProofs/proposition_22.v
+GeoCoq/Elements/OriginalProofs/proposition_23.v
+GeoCoq/Elements/OriginalProofs/lemma_linereflectionisometry.v
+GeoCoq/Elements/OriginalProofs/lemma_10_12.v
+GeoCoq/Elements/OriginalProofs/lemma_Euclid4.v
+GeoCoq/Elements/OriginalProofs/lemma_equalanglesflip.v
+GeoCoq/Elements/OriginalProofs/lemma_9_5.v
+GeoCoq/Elements/OriginalProofs/proposition_23B.v
+GeoCoq/Elements/OriginalProofs/proposition_23C.v
+GeoCoq/Elements/OriginalProofs/proposition_24.v
+GeoCoq/Elements/OriginalProofs/lemma_angletrichotomy2.v
+GeoCoq/Elements/OriginalProofs/proposition_25.v
+GeoCoq/Elements/OriginalProofs/proposition_26A.v
+GeoCoq/Elements/OriginalProofs/lemma_26helper.v
+GeoCoq/Elements/OriginalProofs/proposition_26B.v
+GeoCoq/Elements/OriginalProofs/lemma_collinearbetween.v
+GeoCoq/Elements/OriginalProofs/proposition_27.v
+GeoCoq/Elements/OriginalProofs/lemma_collinearparallel.v
+GeoCoq/Elements/OriginalProofs/lemma_parallelsymmetric.v
+GeoCoq/Elements/OriginalProofs/lemma_parallelflip.v
+GeoCoq/Elements/OriginalProofs/proposition_27B.v
+GeoCoq/Elements/OriginalProofs/proposition_28A.v
+GeoCoq/Elements/OriginalProofs/lemma_supplementsymmetric.v
+GeoCoq/Elements/OriginalProofs/proposition_28B.v
+GeoCoq/Elements/OriginalProofs/proposition_28C.v
+GeoCoq/Elements/OriginalProofs/proposition_31.v
+GeoCoq/Elements/OriginalProofs/lemma_crossbar2.v
+GeoCoq/Elements/OriginalProofs/lemma_supplementinequality.v
+GeoCoq/Elements/OriginalProofs/proposition_29.v
+GeoCoq/Elements/OriginalProofs/proposition_29B.v
+GeoCoq/Elements/OriginalProofs/lemma_parallelNC.v
+GeoCoq/Elements/OriginalProofs/proposition_29C.v
+GeoCoq/Elements/OriginalProofs/proposition_30A.v
+GeoCoq/Elements/OriginalProofs/proposition_30B.v
+GeoCoq/Elements/OriginalProofs/lemma_parallelcollinear1.v
+GeoCoq/Elements/OriginalProofs/lemma_tarskiparallelflip.v
+GeoCoq/Elements/OriginalProofs/lemma_parallelcollinear2.v
+GeoCoq/Elements/OriginalProofs/lemma_parallelcollinear.v
+GeoCoq/Elements/OriginalProofs/lemma_paralleldef2B.v
+GeoCoq/Elements/OriginalProofs/lemma_crisscross.v
+GeoCoq/Elements/OriginalProofs/lemma_30helper.v
+GeoCoq/Elements/OriginalProofs/lemma_crossimpliesopposite.v
+GeoCoq/Elements/OriginalProofs/proposition_30.v
+GeoCoq/Elements/OriginalProofs/proposition_31short.v
+GeoCoq/Elements/OriginalProofs/proposition_32.v
+GeoCoq/Elements/OriginalProofs/lemma_samenotopposite.v
+GeoCoq/Elements/OriginalProofs/proposition_33.v
+GeoCoq/Elements/OriginalProofs/proposition_33B.v
+GeoCoq/Elements/OriginalProofs/lemma_diagonalsmeet.v
+GeoCoq/Elements/OriginalProofs/proposition_34.v
+GeoCoq/Elements/OriginalProofs/lemma_35helper.v
+GeoCoq/Elements/OriginalProofs/lemma_TCreflexive.v
+GeoCoq/Elements/OriginalProofs/lemma_ETreflexive.v
+GeoCoq/Elements/OriginalProofs/lemma_PGrotate.v
+GeoCoq/Elements/OriginalProofs/lemma_PGsymmetric.v
+GeoCoq/Elements/OriginalProofs/lemma_PGflip.v
+GeoCoq/Elements/OriginalProofs/lemma_diagonalsbisect.v
+GeoCoq/Elements/OriginalProofs/lemma_trapezoiddiagonals.v
+GeoCoq/Elements/OriginalProofs/lemma_EFreflexive.v
+GeoCoq/Elements/OriginalProofs/proposition_35A.v
+GeoCoq/Elements/OriginalProofs/lemma_parallelPasch.v
+GeoCoq/Elements/OriginalProofs/proposition_35.v
+GeoCoq/Elements/OriginalProofs/lemma_collinearparallel2.v
+GeoCoq/Elements/OriginalProofs/proposition_36.v
+GeoCoq/Elements/OriginalProofs/proposition_36A.v
+GeoCoq/Elements/OriginalProofs/lemma_samesidetransitive.v
+GeoCoq/Elements/OriginalProofs/lemma_Playfairhelper.v
+GeoCoq/Elements/OriginalProofs/lemma_Playfairhelper2.v
+GeoCoq/Elements/OriginalProofs/lemma_Playfair.v
+GeoCoq/Elements/OriginalProofs/lemma_triangletoparallelogram.v
+GeoCoq/Elements/OriginalProofs/proposition_37.v
+GeoCoq/Elements/OriginalProofs/proposition_38.v
+GeoCoq/Elements/OriginalProofs/proposition_39A.v
+GeoCoq/Elements/OriginalProofs/lemma_samesideflip.v
+GeoCoq/Elements/OriginalProofs/proposition_39.v
+GeoCoq/Elements/OriginalProofs/proposition_40.v
+GeoCoq/Elements/OriginalProofs/proposition_41.v
+GeoCoq/Elements/OriginalProofs/lemma_samesidecollinear.v
+GeoCoq/Elements/OriginalProofs/proposition_42.v
+GeoCoq/Elements/OriginalProofs/proposition_42B.v
+GeoCoq/Elements/OriginalProofs/lemma_supplements2.v
+GeoCoq/Elements/OriginalProofs/proposition_28D.v
+GeoCoq/Elements/OriginalProofs/proposition_43B.v
+GeoCoq/Elements/OriginalProofs/proposition_43.v
+GeoCoq/Elements/OriginalProofs/lemma_parallelbetween.v
+GeoCoq/Elements/OriginalProofs/proposition_44A.v
+GeoCoq/Elements/OriginalProofs/proposition_44.v
+GeoCoq/Elements/OriginalProofs/lemma_RTcongruence.v
+GeoCoq/Elements/OriginalProofs/lemma_RTsymmetric.v
+GeoCoq/Elements/OriginalProofs/proposition_45.v
+GeoCoq/Elements/OriginalProofs/lemma_equaltorightisright.v
+GeoCoq/Elements/OriginalProofs/proposition_46.v
+GeoCoq/Elements/OriginalProofs/lemma_oppositesideflip.v
+GeoCoq/Elements/OriginalProofs/lemma_righttogether.v
+GeoCoq/Elements/OriginalProofs/lemma_squareparallelogram.v
+GeoCoq/Elements/OriginalProofs/lemma_erectedperpendicularunique.v
+GeoCoq/Elements/OriginalProofs/lemma_twoperpsparallel.v
+GeoCoq/Elements/OriginalProofs/lemma_legsmallerhypotenuse.v
+GeoCoq/Elements/OriginalProofs/lemma_tworays.v
+GeoCoq/Elements/OriginalProofs/lemma_altitudeofrighttriangle.v
+GeoCoq/Elements/OriginalProofs/proposition_47A.v
+GeoCoq/Elements/OriginalProofs/lemma_angleaddition.v
+GeoCoq/Elements/OriginalProofs/proposition_47B.v
+GeoCoq/Elements/OriginalProofs/lemma_supplementofright.v
+GeoCoq/Elements/OriginalProofs/lemma_PGrectangle.v
+GeoCoq/Elements/OriginalProofs/lemma_squarerectangle.v
+GeoCoq/Elements/OriginalProofs/proposition_48A.v
+GeoCoq/Elements/OriginalProofs/lemma_squareflip.v
+GeoCoq/Elements/OriginalProofs/proposition_47.v
+GeoCoq/Elements/OriginalProofs/lemma_squaresequal.v
+GeoCoq/Elements/OriginalProofs/lemma_rectanglerotate.v
+GeoCoq/Elements/OriginalProofs/lemma_rectangleparallelogram.v
+GeoCoq/Elements/OriginalProofs/lemma_paste5.v
+GeoCoq/Elements/OriginalProofs/proposition_48.v
+GeoCoq/Elements/OriginalProofs/book1.v
