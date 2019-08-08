@@ -49,7 +49,7 @@ $(BUILD_FOLDER)/C.dk: | $(BUILD_FOLDER)
 config.v:
 	make -C $(COQINEPATH)/encodings _build/predicates/C.config
 	cp $(COQINEPATH)/encodings/_build/predicates/C.config config.v
-	echo "Dedukti Set Param \"syntax\" \"Dedukti\"." >> config.v
+	echo "Dedukti Set Param \"syntax\" \"CondensedDedukti\"." >> config.v
 	echo "Dedukti Set Param \"simpl_letins\" \"true\"." >> config.v
 
 # Generate the dependencies of [.dk] files

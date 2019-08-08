@@ -33,9 +33,7 @@ opam install coq.8.8.1
 git clone --recursive https://github.com/Deducteam/GeoCoqInE-Euclid.git <coqine-path>
 cd <coqine-path>
 git submodule update --init --recursive
-
-<edit .coqrc file with current path>
-
 git submodule update --recursive --remote
+
 make
 ```
